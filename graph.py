@@ -27,3 +27,12 @@ class Graph:
 
     def add_vertex(self, newV): 
         self.data[newV] = []
+        
+    def remove_vertex (self, newV): 
+        if self._is_empty() or self.data[newV] == 0: 
+            return None
+        
+        else: 
+            remove = self.data.pop()
+            return remove
+        
