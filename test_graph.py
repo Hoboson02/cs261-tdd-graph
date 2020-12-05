@@ -94,23 +94,23 @@ class TestGraph(unittest.TestCase):
     Single-vertex graph.
     """
 
-    # def test_adjacent_one(self):
-    #     """
-    #     A graph with one vertex has no neighbors, so adjacent returns false.
-    #     """
-    #     g = Graph()
-    #     g.data['A'] = []
-    #     self.assertFalse(g.adjacent('A', 'B'))
-    #     self.assertFalse(g.adjacent('A', 'FAKE'))
+    def test_adjacent_one(self):
+        """
+        A graph with one vertex has no neighbors, so adjacent returns false.
+        """
+        g = Graph()
+        g.data['A'] = []
+        self.assertFalse(g.adjacent('A', 'B'))
+        self.assertFalse(g.adjacent('A', 'FAKE'))
 
-    # def test_neighbors_one(self):
-    #     """
-    #     Asking for the neighbors of a vertex in an graph with just one vertex
-    #     returns an empty list.
-    #     """
-    #     g = Graph()
-    #     g.data['A'] = []
-    #     self.assertEqual([], g.neighbors('A'))
+    def test_neighbors_one(self):
+        """
+        Asking for the neighbors of a vertex in an graph with just one vertex
+        returns an empty list.
+        """
+        g = Graph()
+        g.data['A'] = []
+        self.assertEqual([], g.neighbors('A'))
 
     # def test_add_vertex_one(self):
     #     """

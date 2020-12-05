@@ -24,9 +24,17 @@ class Graph:
     def neighbors(self, a): 
         if self._is_empty(): 
             return []
+        if len(self.data) < 2: 
+            return []
 
     def add_vertex(self, newV): 
         self.data[newV] = []
+        if self._is_empty() or self.data[newV] == 0 : 
+            return None
+        
+        # else: 
+        #     add = self.data.append() 
+        #     return add
         
     def remove_vertex (self, newV): 
         if self._is_empty() or self.data[newV] == 0: 
