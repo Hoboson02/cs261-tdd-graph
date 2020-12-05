@@ -44,7 +44,7 @@ class Graph:
             return None
         
         else: 
-            remove = self.data.pop()
+            remove = self.data.pop(newV)
             return remove
         
     def add_edge(self, newE, newE2): 
