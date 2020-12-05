@@ -24,3 +24,6 @@ class Graph:
     def neighbors(self, a): 
         if self._is_empty(): 
             return []
+
+    def add_vertex(self, newV): 
+        self.data[newV] = []
