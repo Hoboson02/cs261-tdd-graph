@@ -48,11 +48,14 @@ class Graph:
             return remove
         
     def add_edge(self, newE, newE2): 
+        for value in self.data: 
+            if newE in self.data: 
+                return
         if self._is_empty() or self.data[newE] == 0 and self.data[newE2] == 0: 
             return None
         
         else: 
-            add = self.data.append() 
+            add = self.data[newE, newE2]
             return add
 
     def remove_edge(self, newE, newE2): 
