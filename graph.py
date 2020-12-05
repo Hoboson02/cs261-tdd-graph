@@ -28,13 +28,16 @@ class Graph:
             return []
 
     def add_vertex(self, newV): 
+        for value in self.data: 
+            if newV in self.data: 
+                return
         self.data[newV] = []
         if self._is_empty() or self.data[newV] == 0 : 
             return None
         
-        # else: 
-        #     add = self.data.append() 
-        #     return add
+        else: 
+            add = self.data[newV]
+            return add
         
     def remove_vertex (self, newV): 
         if self._is_empty() or self.data[newV] == 0: 
