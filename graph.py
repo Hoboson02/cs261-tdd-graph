@@ -13,9 +13,12 @@ class Graph:
         return None
     pass
 
-    def adjacent (self, aVertices, bVertices): 
-        return None
-    
+    def adjacent (self, V1, V2): 
+        if self._is_empty(): 
+            return False
+        v1List = self.neighbors(V1)
+        if V2 in v1List: 
+            return True 
     def _is_empty(self):
         if len(self.data) == 0: 
             return True 
@@ -26,6 +29,7 @@ class Graph:
             return []
         if len(self.data) < 2: 
             return []
+        return self.data.get(a)
 
     def add_vertex(self, newV): 
         for value in self.data: 
