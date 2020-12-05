@@ -1,5 +1,5 @@
 # DO NOT MODIFY THIS FILE
-# Run me via: python3 -m unittest graph
+# Run me via: python -m unittest test_graph
 
 import unittest
 import time
@@ -22,12 +22,12 @@ class TestGraph(unittest.TestCase):
         except NameError:
             self.fail("Could not instantiate Graph.")
 
-    # def test_internal(self):
-    #     """
-    #     A graph uses an 'adjacency list' to represent vertices and edges.
-    #     """
-    #     g = Graph()
-    #     self.assertEqual(dict, type(g.data))
+    def test_internal(self):
+        """
+        A graph uses an 'adjacency list' to represent vertices and edges.
+        """
+        g = Graph()
+        self.assertEqual(dict, type(g.data))
 
     """
     Empty graphs.
