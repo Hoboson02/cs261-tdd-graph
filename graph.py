@@ -43,3 +43,11 @@ class Graph:
         else: 
             add = self.data.append() 
             return add
+
+    def remove_edge(self, newE, newE2): 
+        if self._is_empty() or self.data[newE] == 0 and self.data[newE2] == 0: 
+            return None
+        
+        else: 
+            remove = self.data.pop()
+            return remove
