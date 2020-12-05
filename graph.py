@@ -63,5 +63,5 @@ class Graph:
             return None
         
         else: 
-            remove = self.data.pop()
+            remove = self.data.pop(newE, newE2)
             return remove
