@@ -13,4 +13,14 @@ class Graph:
         return None
     pass
 
+    def adjacent (self, aVertices, bVertices): 
+        return None
     
+    def _is_empty(self):
+        if len(self.data) == 0: 
+            return True 
+
+
+    def neighbors(self, a): 
+        if self._is_empty(): 
+            return []
