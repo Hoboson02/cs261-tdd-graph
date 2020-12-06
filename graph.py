@@ -49,6 +49,8 @@ class Graph:
             self.data.pop(newV)
         
     def add_edge(self, newE, newE2): 
+        if self.adjacent(newE, newE2): 
+            return
         self.neighbors(newE).append(newE2)
         self.neighbors(newE2).append(newE)
 
