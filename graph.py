@@ -55,12 +55,10 @@ class Graph:
         self.neighbors(newE2).append(newE)
 
     def remove_edge(self, newE, newE2): 
-        if self._is_empty() or self.data[newE] == 0 and self.data[newE2] == 0: 
-            return None
-        
-        else: 
-            remove = self.data.pop(newE, newE2)
-            return remove
+        if newE in self.neighbors(newE2): 
+            self.neighbors(newE2).remove(newE)
+        if newE2 in self.neighbors(newE): 
+            self.neighbors(newE).remove(newE2)
 
     def remove_neighbors(self, value):
         for neighbor in self.neighbors(value): 
