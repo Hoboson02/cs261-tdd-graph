@@ -49,15 +49,8 @@ class Graph:
             self.data.pop(newV)
         
     def add_edge(self, newE, newE2): 
-        for value in self.data: 
-            if newE in self.data: 
-                return
-        if self._is_empty() or self.data[newE] == 0 and self.data[newE2] == 0: 
-            return None
-        
-        else: 
-            add = self.data[newE, newE2]
-            return add
+        self.neighbors(newE).append(newE2)
+        self.neighbors(newE2).append(newE)
 
     def remove_edge(self, newE, newE2): 
         if self._is_empty() or self.data[newE] == 0 and self.data[newE2] == 0: 
@@ -71,3 +64,6 @@ class Graph:
         for neighbor in self.neighbors(value): 
             if value in self.neighbors(neighbor): 
                 self.neighbors(neighbor).remove(value)
+
+    def add_neighbors(self, value):
+        self.push(value)
