@@ -67,3 +67,6 @@ class Graph:
 
     def add_neighbors(self, value):
         self.push(value)
+
+    def v(self): 
+        return len(self.data)
