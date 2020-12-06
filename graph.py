@@ -29,7 +29,7 @@ class Graph:
             return []
         if len(self.data) < 2: 
             return []
-        return self.data.get(a)
+        return self.data.get(a, [])
 
     def add_vertex(self, newV): 
         for value in self.data: 
@@ -43,13 +43,10 @@ class Graph:
             add = self.data[newV]
             return add
         
-    def remove_vertex (self, newV): 
-        if self._is_empty() or self.data[newV] == 0: 
-            return None
-        
-        else: 
-            remove = self.data.pop(newV)
-            return remove
+    def remove_vertex(self, newV):
+        if newV in self.data:
+            self.remove_neighbors(newV)
+            self.data.pop(newV)
         
     def add_edge(self, newE, newE2): 
         for value in self.data: 
@@ -69,3 +66,8 @@ class Graph:
         else: 
             remove = self.data.pop(newE, newE2)
             return remove
+
+    def remove_neighbors(self, value):
+        for neighbor in self.neighbors(value): 
+            if value in self.neighbors(neighbor): 
+                self.neighbors(neighbor).remove(value)
